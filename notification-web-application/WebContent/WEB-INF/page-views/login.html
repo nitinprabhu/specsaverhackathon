@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+
+<link rel="stylesheet" href="css/reset.css">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/index.js"></script>
+
+
+</head>
+
+<body>
+	<form name="loginForm" id="loginForm" method="post" action="validateUser">
+		<div class="wrap">
+			<input type="text" name="username" placeholder="username" required>
+			<div class="bar">
+				<i></i>
+			</div>
+			<input name="password" type="password" placeholder="password" required>
+			<div class="bar">
+				<i></i>
+			</div>
+			<select name="roleType" class="format">
+  				<option value="Audiologist">Audiologist</option>
+ 				<option value="Customer">Customer</option>
+			</select>
+			<div class="bar">
+				<i></i>
+			</div>
+			<button>Sign in</button>
+		</div>
+	</form>
+
+
+
+
+
+</body>
+</html>
