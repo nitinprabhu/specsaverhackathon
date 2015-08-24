@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -58,6 +59,32 @@ public class CustomerDAO {
 		return customerDetails;
 	}
 
+	public void update(final  CustomerDetails customerDetails)
+	{
+		try
+		{
+			getEntityManager().merge(customerDetails);
+		}
+		catch (Exception e)
+		{
+			throw e;
+		}
+	}
 	
-	
+	public CustomerDetails fetchCustomerById(String username)
+	{
+		 CustomerDetails customerDetails=null;
+		try
+		{
+			Query query=getEntityManager().createQuery("from CustomerDetails where firstName=:firstName");
+			query.setParameter("firstName", username);
+			customerDetails=(CustomerDetails) query.getResultList().get(0);
+		}
+		catch (Exception e)
+		{
+			throw e;
+		}
+		
+		return customerDetails;
+	}
 }

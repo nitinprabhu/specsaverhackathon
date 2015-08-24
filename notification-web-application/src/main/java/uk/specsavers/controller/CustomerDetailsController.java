@@ -38,5 +38,23 @@ public class CustomerDetailsController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/processNotifications", method = RequestMethod.POST)
+	public void processNotifications(HttpServletRequest request,HttpServletResponse httpServletResponses) {
+		
+		retrieveCustomerDetailsService.processNotifications();
+		
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView dashboard(HttpServletRequest request,HttpServletResponse httpServletResponses) {
+		
+
+		ModelAndView modelAndView = new ModelAndView();
+	
+		modelAndView.setViewName("home");
+
+		return modelAndView;
+	}
 
 }

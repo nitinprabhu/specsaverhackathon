@@ -35,7 +35,7 @@ public class CustomerDetails implements Serializable {
 	
 	private Date nextSightTestDate;
 	
-	private BigDecimal contactNumber;
+	private String contactNumber;
 	
 	private String reminderStatus;
 
@@ -113,11 +113,11 @@ public class CustomerDetails implements Serializable {
 		this.nextSightTestDate = nextSightTestDate;
 	}
 
-	public BigDecimal getContactNumber() {
+	public String getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(BigDecimal contactNumber) {
+	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 
